@@ -1,0 +1,40 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Instances/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://background.jpg" type="Texture" id=2]
+[ext_resource path="res://Instances/Platform.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scripts/Camera2D.gd" type="Script" id=4]
+[ext_resource path="res://Scripts/World.gd" type="Script" id=5]
+
+[node name="World" type="Node2D"]
+script = ExtResource( 5 )
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+gravity_scale = 7.0
+camera_path = NodePath("../Camera2D")
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2( 580, 800 )
+
+[node name="TextureRect" type="TextureRect" parent="ParallaxBackground/ParallaxLayer"]
+margin_left = -1621.72
+margin_top = -1004.17
+margin_right = 10641.3
+margin_bottom = 4031.83
+rect_scale = Vector2( 0.2, 0.4 )
+texture = ExtResource( 2 )
+expand = true
+stretch_mode = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
+script = ExtResource( 4 )
+player_path = NodePath("../Player")
+
+[node name="Platform" parent="." instance=ExtResource( 3 )]
+position = Vector2( 2.71989, 50.9421 )

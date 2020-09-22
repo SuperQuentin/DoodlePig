@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://cloud.png" type="Texture" id=1]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 24.1868, 3.09358 )
+
+[node name="Platform" type="StaticBody2D" groups=[
+"Paddles",
+]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -4.71101, 1.9386 )
+z_index = 1
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( -21.2479, -2.76253 )
+scale = Vector2( 0.182249, 0.182249 )
+texture = ExtResource( 1 )

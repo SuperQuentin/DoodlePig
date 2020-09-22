@@ -15,13 +15,14 @@ _global_script_class_icons={
 
 [application]
 
-config/name="DoodlePig"
+config/name="Pigs On the Wind"
+run/main_scene="res://Scenes/World.tscn"
 config/icon="res://icon.png"
 
 [display]
 
-window/size/width=750
-window/size/height=1334
+window/size/width=560
+window/size/height=800
 
 [rendering]
 
