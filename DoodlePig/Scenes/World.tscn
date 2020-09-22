@@ -2,10 +2,10 @@
 
 [ext_resource path="res://Instances/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Sprites/background.jpg" type="Texture" id=2]
-[ext_resource path="res://Scripts/CloudPlatform.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/CloudPlatform.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scripts/Camera2D.gd" type="Script" id=4]
 [ext_resource path="res://Scripts/World.gd" type="Script" id=5]
-[ext_resource path="res://Scripts/MovingCloudPlatform.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/MovingCloudPlatform.tscn" type="PackedScene" id=6]
 
 [node name="World" type="Node2D"]
 script = ExtResource( 5 )
@@ -37,9 +37,8 @@ current = true
 script = ExtResource( 4 )
 player_path = NodePath("../Player")
 
-[node name="Platform" parent="." instance=ExtResource( 3 )]
-position = Vector2( 2.71989, 50.9421 )
-[connection signal="move" from="Camera2D" to="." method="generateCloud"]
+[node name="CloudPlatform" parent="." instance=ExtResource( 3 )]
+position = Vector2( 0.943878, 47.1937 )
 
 [node name="MovingCloudPlatform2" parent="." instance=ExtResource( 6 )]
 visible = false

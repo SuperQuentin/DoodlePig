@@ -1,8 +1,8 @@
 extends Node2D
 
 
-var cloud_platform = preload("res://Scripts/CloudPlatform.tscn")
-var movingcloud_platform = preload("res://Scripts/MovingCloudPlatform.tscn") 
+var cloud_platform = preload("res://Scenes/CloudPlatform.tscn")
+var movingcloud_platform = preload("res://Scenes/MovingCloudPlatform.tscn") 
 
 
 var width
