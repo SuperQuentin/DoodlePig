@@ -1,0 +1,8 @@
+Platforme : Mouvement / marche 1x / ne marche pas
+
+aile : Avance 2x plus vite que normalement 
+aile arc en ciel : avance 3/4x plus vite que normalement
+
+queue de cochon : fait un saut plus haut de normalement.
+
+ennemis : a définir. (Couteau de boucher / )
