@@ -30,7 +30,9 @@ __meta__ = {
 anchor_mode = 0
 current = true
 
-[node name="plateforme" type="StaticBody2D" parent="."]
+[node name="plateforme" type="StaticBody2D" parent="." groups=[
+"paddles",
+]]
 
 [node name="Sprite" type="Sprite" parent="plateforme"]
 texture = ExtResource( 3 )
