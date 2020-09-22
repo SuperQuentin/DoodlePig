@@ -1,7 +1,10 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Scenes/Instances/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Sprites/bd_tile.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/plateform.png" type="Texture" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
 
 [node name="Main" type="Node2D"]
 
@@ -26,3 +29,13 @@ __meta__ = {
 [node name="Camera2D" type="Camera2D" parent="."]
 anchor_mode = 0
 current = true
+
+[node name="plateforme" type="StaticBody2D" parent="."]
+
+[node name="Sprite" type="Sprite" parent="plateforme"]
+texture = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="plateforme"]
+position = Vector2( 0, -15 )
+scale = Vector2( 7, 1 )
+shape = SubResource( 1 )
