@@ -18,6 +18,11 @@ _global_script_class_icons={
 config/name="DoodlePig"
 config/icon="res://icon.png"
 
+[display]
+
+window/size/width=750
+window/size/height=1334
+
 [rendering]
 
 environment/default_environment="res://default_env.tres"
