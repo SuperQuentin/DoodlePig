@@ -37,8 +37,9 @@ current = true
 script = ExtResource( 4 )
 player_path = NodePath("../Player")
 
-[node name="CloudPlatform" parent="." instance=ExtResource( 3 )]
-position = Vector2( 0.943878, 47.1937 )
+[node name="Platform" parent="." instance=ExtResource( 3 )]
+position = Vector2( 2.71989, 50.9421 )
+[connection signal="move" from="Camera2D" to="." method="generateCloud"]
 
 [node name="MovingCloudPlatform2" parent="." instance=ExtResource( 6 )]
 visible = false
