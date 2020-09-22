@@ -9,6 +9,7 @@
 [node name="Main" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
+position = Vector2( 400, 80 )
 gravity_scale = 9.81
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
@@ -30,14 +31,15 @@ __meta__ = {
 anchor_mode = 0
 current = true
 
-[node name="plateforme" type="StaticBody2D" parent="." groups=[
+[node name="Plateforme" type="StaticBody2D" parent="." groups=[
 "paddles",
 ]]
+position = Vector2( 400, 900 )
 
-[node name="Sprite" type="Sprite" parent="plateforme"]
+[node name="Sprite" type="Sprite" parent="Plateforme"]
 texture = ExtResource( 3 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="plateforme"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Plateforme"]
 position = Vector2( 0, -15 )
 scale = Vector2( 7, 1 )
 shape = SubResource( 1 )
