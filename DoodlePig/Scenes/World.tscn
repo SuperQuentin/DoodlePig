@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Instances/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://background.jpg" type="Texture" id=2]
-[ext_resource path="res://Instances/Platform.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Instances/CloudPlatform.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scripts/Camera2D.gd" type="Script" id=4]
 [ext_resource path="res://Scripts/World.gd" type="Script" id=5]
 
@@ -36,5 +36,5 @@ current = true
 script = ExtResource( 4 )
 player_path = NodePath("../Player")
 
-[node name="Platform" parent="." instance=ExtResource( 3 )]
-position = Vector2( 2.71989, 50.9421 )
+[node name="CloudPlatform" parent="." instance=ExtResource( 3 )]
+position = Vector2( 0.943878, 47.1937 )

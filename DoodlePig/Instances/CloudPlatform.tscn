@@ -5,7 +5,7 @@
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 24.1868, 3.09358 )
 
-[node name="Platform" type="StaticBody2D" groups=[
+[node name="CloudPlatform" type="StaticBody2D" groups=[
 "Paddles",
 ]]
 
