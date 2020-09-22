@@ -7,7 +7,7 @@ func _ready():
 	width = get_viewport_rect().size.x
 	randomize()
 	var y = 0
-	while y > -4000:
+	for i in range(0,30):
 		var new_platform = platform.instance()
 		new_platform.set_position(Vector2(rand_range(-width/2,width/2),y))
 		add_child(new_platform)
