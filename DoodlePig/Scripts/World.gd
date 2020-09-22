@@ -11,7 +11,7 @@ func _ready():
 func generateCloud(y):
 	width = get_viewport_rect().size.x
 	randomize()
-	for i in range(0,30):
+	for i in range(0,3):
 		var new_platform = platform.instance()
 		new_platform.set_position(Vector2(rand_range(-width/2 + offset_x,width/2 - offset_x),y))
 		add_child(new_platform)
