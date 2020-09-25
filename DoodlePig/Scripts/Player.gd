@@ -33,7 +33,7 @@ func _physics_process(delta):
 		set_linear_velocity(Vector2(0,get_linear_velocity().y))
 
 func collision(body):
-	if body.has_method("on_player_touched") and get_linear_velocity():
+	if body.has_method("on_player_touched") and get_linear_velocity().y > 0:
 		body.on_player_touched()
 	if body.is_in_group('Paddles') and get_linear_velocity().y > 0:
 		set_linear_velocity(Vector2(0,-jump_speed))
