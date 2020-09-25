@@ -37,9 +37,9 @@ __meta__ = {
 }
 
 [node name="Background" type="TextureRect" parent="MarginContainer"]
-margin_right = 2880.0
-margin_bottom = 1800.0
-texture = ExtResource( 4 )
+margin_right = 660.0
+margin_bottom = 898.0
+texture = ExtResource( 2 )
 
 [node name="Stay" type="AnimationPlayer" parent="MarginContainer"]
 method_call_mode = 1

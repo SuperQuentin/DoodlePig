@@ -42,11 +42,13 @@ func collision(body):
 
 
 func exit_screen():
-	if position.x > camera.position.x and get_linear_velocity().x > 0:
-		set_position(Vector2(-width/2-10,position.y))
-	if position.x < camera.position.x and get_linear_velocity().x < 0:
-		set_position(Vector2(width/2-10,position.y))
-	if position.y >= camera.position.y+(width/2+20):
+	if position.x > camera.position.x:
+		if position.x > camera.position.x-(width/2-10):
+			set_position(Vector2(-width/2-10,position.y))
+	else:
+		if position.x < camera.position.x+(width/2-10):
+			set_position(Vector2(width/2-10,position.y))
+	if position.y >= camera.position.y+(height/2):
 		get_tree().change_scene(("res://Scenes/GameOver.tscn"))
 
 	pass 
