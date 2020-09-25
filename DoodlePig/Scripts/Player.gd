@@ -25,6 +25,9 @@ func _physics_process(delta):
 	
 	if get_linear_velocity().y > 0:
 		$Fall.play("PlayFall")
+	if Input.is_action_pressed("ui_cancel"):
+		get_tree().get_root().get_node("global_variable").score = get_node("Score").text
+		get_tree().change_scene(("res://Scenes/GameOver.tscn"))
 	if left_key:
 		set_linear_velocity(Vector2(-speed, get_linear_velocity().y))
 		sprite.set_flip_h(false)
@@ -51,8 +54,8 @@ func exit_screen():
 		if position.x < camera.position.x+(width/2-10):
 			set_position(Vector2(width/2-10,position.y))
 	if position.y >= camera.position.y+(height/2):
-		get_tree().change_scene(("res://Scenes/GameOver.tscn"))
 		get_tree().get_root().get_node("global_variable").score = get_node("Score").text
+		get_tree().change_scene(("res://Scenes/GameOver.tscn"))
 		
 
 	pass 

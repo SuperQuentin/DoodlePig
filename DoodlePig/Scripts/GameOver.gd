@@ -12,7 +12,9 @@ func _ready():
 	get_node("label_score/score").text = str(get_tree().get_root().get_node("global_variable").score) 
 	pass # Replace with function body.
 
-
+func _process(delta):
+	if Input.is_action_pressed("ui_accept"):
+		_on_Button_pressed()
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
