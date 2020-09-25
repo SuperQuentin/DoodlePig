@@ -1,0 +1,82 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://Sprites/Animation/BlackHole/000.png" type="Texture" id=1]
+[ext_resource path="res://Sprites/Animation/BlackHole/001.png" type="Texture" id=2]
+[ext_resource path="res://Scripts/CollisionBlackHole.gd" type="Script" id=3]
+[ext_resource path="res://Scripts/BlackHole.gd" type="Script" id=4]
+[ext_resource path="res://Sprites/Animation/Kill/005.png" type="Texture" id=5]
+[ext_resource path="res://Sprites/Animation/Kill/003.png" type="Texture" id=6]
+[ext_resource path="res://Sprites/Animation/Kill/002.png" type="Texture" id=7]
+[ext_resource path="res://Sprites/Animation/Kill/000.png" type="Texture" id=8]
+[ext_resource path="res://Sprites/Animation/Kill/004.png" type="Texture" id=9]
+[ext_resource path="res://Sprites/Animation/Kill/001.png" type="Texture" id=10]
+
+[sub_resource type="Animation" id=1]
+resource_name = "Aspiration"
+length = 0.408
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("MarginContainer/TextureRect:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ ExtResource( 1 ), ExtResource( 2 ) ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "Kill"
+tracks/0/type = "value"
+tracks/0/path = NodePath("MarginContainer/TextureRect:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6, 0.8, 1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ ExtResource( 8 ), ExtResource( 10 ), ExtResource( 7 ), ExtResource( 6 ), ExtResource( 9 ), ExtResource( 5 ) ]
+}
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 1.43307, 3.9828 )
+
+[node name="StaticBody2D" type="KinematicBody2D" groups=[
+"Ennemis",
+]]
+script = ExtResource( 4 )
+
+[node name="BlackHole" type="Node2D" parent="."]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="BlackHole"]
+anims/Aspiration = SubResource( 1 )
+anims/Kill = SubResource( 2 )
+
+[node name="MarginContainer" type="MarginContainer" parent="BlackHole"]
+margin_left = -76.4549
+margin_top = -85.2138
+margin_right = 1523.55
+margin_bottom = 1114.79
+rect_scale = Vector2( 0.0956099, 0.0956099 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="BlackHole/MarginContainer"]
+margin_right = 1600.0
+margin_bottom = 1200.0
+texture = ExtResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -2.99658, -25.8458 )
+scale = Vector2( 27.1972, -8.11203 )
+shape = SubResource( 3 )
+script = ExtResource( 3 )
