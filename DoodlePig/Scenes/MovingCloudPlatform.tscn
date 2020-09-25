@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Sprites/cloudOrange.png" type="Texture" id=1]
+[ext_resource path="res://MovingCloudPlatform.gd" type="Script" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 24.1868, 3.40184 )
+
+[node name="CloudPlatform" type="KinematicBody2D" groups=[
+"Paddles",
+]]
+script = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -1.04019, -2.73334 )
+z_index = 1
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( -0.00844396, 0.0251324 )
+scale = Vector2( 0.182249, 0.182249 )
+texture = ExtResource( 1 )

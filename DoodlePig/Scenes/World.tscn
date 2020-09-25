@@ -1,0 +1,56 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Instances/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Sprites/background.jpg" type="Texture" id=2]
+[ext_resource path="res://Scenes/CloudPlatform.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scripts/Camera2D.gd" type="Script" id=4]
+[ext_resource path="res://Scripts/World.gd" type="Script" id=5]
+[ext_resource path="res://Scenes/MovingCloudPlatform.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/TrappedCloud.tscn" type="PackedScene" id=7]
+
+[node name="World" type="Node2D"]
+script = ExtResource( 5 )
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+position = Vector2( -149.199, 83.4386 )
+gravity_scale = 7.0
+camera_path = NodePath("../Camera2D")
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2( 580, 800 )
+
+[node name="TextureRect" type="TextureRect" parent="ParallaxBackground/ParallaxLayer"]
+margin_left = -2421.97
+margin_top = 1630.61
+margin_right = 10841.0
+margin_bottom = 6666.61
+rect_scale = Vector2( 0.258466, -0.551735 )
+texture = ExtResource( 2 )
+expand = true
+stretch_mode = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
+script = ExtResource( 4 )
+player_path = NodePath("../Player")
+
+[node name="CloudPlatform" parent="." instance=ExtResource( 3 )]
+position = Vector2( -150.377, 136.996 )
+
+[node name="MovingCloudPlatform2" parent="." instance=ExtResource( 6 )]
+visible = false
+position = Vector2( 132.149, 58.733 )
+
+[node name="TrappedCloud" parent="." groups=[
+"Unstable",
+] instance=ExtResource( 7 )]
+visible = false
+position = Vector2( -4.59618, 49.1439 )
+[connection signal="last_cloud_y" from="." to="Camera2D" method="set_gen_step"]
+[connection signal="new_cloud" from="Camera2D" to="." method="generateCloud"]
+[connection signal="on_move" from="Camera2D" to="." method="remove_undisplay_child"]
