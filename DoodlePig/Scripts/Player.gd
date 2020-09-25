@@ -35,8 +35,6 @@ func _physics_process(delta):
 func collision(body):
 	if body.is_in_group('Paddles') and get_linear_velocity().y > 0:
 		set_linear_velocity(Vector2(0,-jump_speed))
-	pass 
-	
 
 
 func exit_screen():

@@ -16,9 +16,13 @@ position = Vector2( -0.0401154, -0.174572 )
 scale = Vector2( 0.0739375, 0.0739375 )
 texture = ExtResource( 1 )
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Area2D" type="Area2D" parent="." groups=[
+"Player",
+]]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" groups=[
+"Player",
+]]
 position = Vector2( -1.25618, 16.2735 )
 shape = SubResource( 1 )
 
