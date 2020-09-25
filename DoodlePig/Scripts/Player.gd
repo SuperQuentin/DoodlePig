@@ -43,3 +43,12 @@ func exit_screen():
 	if position.x < camera.position.x and get_linear_velocity().x < 0:
 		set_position(Vector2(width/2-10,position.y))
 	pass 
+
+
+
+
+
+func exit_screen_bottom():
+	if position.y < 0:
+		get_tree().change_scene(("res://Scenes/GameOver.tscn"))
+	pass # Replace with function body.
