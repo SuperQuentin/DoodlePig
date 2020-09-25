@@ -7,11 +7,13 @@ var jump_speed = 600
 var speed = 300
 
 var width
+var height
 
 var sprite
 
 func _ready():
 	width = get_viewport_rect().size.x
+	height = get_viewport_rect().size.y
 	camera = get_node(camera_path)
 	sprite = get_node("Sprite")
 	set_physics_process(true)
@@ -42,13 +44,8 @@ func exit_screen():
 		set_position(Vector2(-width/2-10,position.y))
 	if position.x < camera.position.x and get_linear_velocity().x < 0:
 		set_position(Vector2(width/2-10,position.y))
+	if position.y >= camera.position.y+(width/2+20):
+		get_tree().change_scene(("res://Scenes/GameOver.tscn"))
+
 	pass 
 
-
-
-
-
-func exit_screen_bottom():
-	if position.y < 0:
-		get_tree().change_scene(("res://Scenes/GameOver.tscn"))
-	pass # Replace with function body.

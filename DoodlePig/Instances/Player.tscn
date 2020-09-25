@@ -23,8 +23,5 @@ position = Vector2( -1.25618, 16.2735 )
 shape = SubResource( 1 )
 
 [node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
-
-[node name="VisibilityNotifier2D2" type="VisibilityNotifier2D" parent="."]
 [connection signal="body_entered" from="Area2D" to="." method="collision"]
 [connection signal="screen_exited" from="VisibilityNotifier2D" to="." method="exit_screen"]
-[connection signal="screen_exited" from="VisibilityNotifier2D2" to="." method="exit_screen_bottom"]
