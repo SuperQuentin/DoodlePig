@@ -44,4 +44,5 @@ position = Vector2( 0.943878, 47.1937 )
 visible = false
 position = Vector2( 132.149, 58.733 )
 [connection signal="last_cloud_y" from="." to="Camera2D" method="set_gen_step"]
-[connection signal="on_move" from="Camera2D" to="." method="generateCloud"]
+[connection signal="new_cloud" from="Camera2D" to="." method="generateCloud"]
+[connection signal="on_move" from="Camera2D" to="." method="remove_undisplay_child"]

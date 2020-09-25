@@ -30,3 +30,11 @@ func generateCloud(y):
 	var lastchild = get_child(get_child_count()-1)
 	
 	emit_signal("last_cloud_y",lastchild.position.y)
+
+func remove_undisplay_child(y):
+	for child in get_tree().get_nodes_in_group("Paddles"):
+		if child.position.y > y+800:
+			remove_child(child)
+			
+	print("There is %d entites" % get_child_count())
+	pass
