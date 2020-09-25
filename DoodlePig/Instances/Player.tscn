@@ -6,9 +6,8 @@
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 12.0946, 1.97198 )
 
-[node name="Player" type="RigidBody2D" groups=[
-"Player",
-]]
+[node name="Player" type="RigidBody2D"]
+position = Vector2( 2.37842, 0 )
 mode = 2
 script = ExtResource( 2 )
 
