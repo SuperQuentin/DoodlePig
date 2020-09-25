@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/002.png-f7e86b5eb60e3606927398760a2d88cd.stex"
+path="res://.import/003.png-1eebceb34b5037c49fa56ffd48d39981.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Scenes/002.png"
-dest_files=[ "res://.import/002.png-f7e86b5eb60e3606927398760a2d88cd.stex" ]
+source_file="res://Sprites/Animation/Kill/003.png"
+dest_files=[ "res://.import/003.png-1eebceb34b5037c49fa56ffd48d39981.stex" ]
 
 [params]
 
