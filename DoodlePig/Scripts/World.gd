@@ -11,6 +11,7 @@ var width
 var offset_x = 40
 
 func _ready():
+	$ParallaxBackground/ParallaxLayer/Wind/AnimationPlayer.play("Wind")
 	generateCloud(0)
 	pass
 	
