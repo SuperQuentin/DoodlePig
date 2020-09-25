@@ -42,3 +42,7 @@ func remove_undisplay_child(y):
 			
 	print("There is %d entites" % get_child_count())
 	pass
+
+
+func _on_Camera2D_on_move(camera_y):
+	pass # Replace with function body.

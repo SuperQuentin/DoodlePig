@@ -9,6 +9,7 @@ extends Node2D
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$MarginContainer/StayGameOver.play("GameOver")
+	get_node("label_score/score").text = str(get_tree().get_root().get_node("global_variable").score) 
 	pass # Replace with function body.
 
 
