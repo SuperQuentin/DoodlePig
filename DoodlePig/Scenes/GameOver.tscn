@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Scripts/GameOver.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/Animation/GameOver/001.png" type="Texture" id=2]
 [ext_resource path="res://Sprites/buttonPlayAgain.png" type="Texture" id=3]
 [ext_resource path="res://Sprites/Animation/GameOver/000.png" type="Texture" id=4]
+[ext_resource path="res://Font/Fresh Coconut.ttf" type="DynamicFontData" id=5]
 
 [sub_resource type="Animation" id=1]
 resource_name = "GameOver"
@@ -21,6 +22,14 @@ tracks/0/keys = {
 "update": 1,
 "values": [ ExtResource( 4 ), ExtResource( 2 ) ]
 }
+
+[sub_resource type="DynamicFont" id=2]
+size = 64
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 5 )
+
+[sub_resource type="Theme" id=3]
+default_font = SubResource( 2 )
 
 [node name="Node2D" type="Node2D"]
 position = Vector2( 311.479, 377.55 )
@@ -55,6 +64,34 @@ mouse_default_cursor_shape = 2
 action_mode = 0
 icon = ExtResource( 3 )
 flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="label_score" type="Label" parent="."]
+margin_left = -220.0
+margin_top = 7.0
+margin_right = 210.0
+margin_bottom = 330.0
+rect_pivot_offset = Vector2( 184.521, 140.45 )
+theme = SubResource( 3 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "your score : "
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="score" type="Label" parent="label_score"]
+margin_left = 12.0
+margin_top = 78.0
+margin_right = 412.0
+margin_bottom = 243.0
+rect_pivot_offset = Vector2( 184.521, 140.45 )
+theme = SubResource( 3 )
+text = "00000
+"
+align = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }

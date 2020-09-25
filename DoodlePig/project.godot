@@ -19,6 +19,14 @@ config/name="Pigs On the Wind"
 run/main_scene="res://Scenes/Menu.tscn"
 config/icon="res://Sprites/icon.png"
 
+[autolo]
+
+autolo=false
+
+[autoload]
+
+global_variable="*res://Scripts/global.gd"
+
 [display]
 
 window/size/width=560

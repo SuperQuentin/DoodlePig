@@ -52,6 +52,8 @@ func exit_screen():
 			set_position(Vector2(width/2-10,position.y))
 	if position.y >= camera.position.y+(height/2):
 		get_tree().change_scene(("res://Scenes/GameOver.tscn"))
+		get_tree().get_root().get_node("global_variable").score = get_node("Score").text
+		
 
 	pass 
 
