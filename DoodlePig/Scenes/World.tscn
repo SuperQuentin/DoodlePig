@@ -22,11 +22,11 @@ camera_path = NodePath("../Camera2D")
 motion_mirroring = Vector2( 580, 800 )
 
 [node name="TextureRect" type="TextureRect" parent="ParallaxBackground/ParallaxLayer"]
-margin_left = -1611.0
-margin_top = -1004.0
-margin_right = 11652.0
-margin_bottom = 4032.0
-rect_scale = Vector2( 0.2, 0.4 )
+margin_left = -2421.97
+margin_top = 1630.61
+margin_right = 10841.0
+margin_bottom = 6666.61
+rect_scale = Vector2( 0.258466, -0.551735 )
 texture = ExtResource( 2 )
 expand = true
 stretch_mode = 2

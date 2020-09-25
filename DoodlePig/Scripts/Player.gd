@@ -23,6 +23,8 @@ func _physics_process(delta):
 	var left_key = Input.is_action_pressed("ui_left")
 	var right_key = Input.is_action_pressed("ui_right")
 	
+	if get_linear_velocity().y > 0:
+		$Fall.play("PlayFall")
 	if left_key:
 		set_linear_velocity(Vector2(-speed, get_linear_velocity().y))
 		sprite.set_flip_h(false)
@@ -35,16 +37,20 @@ func _physics_process(delta):
 func collision(body):
 	if body.has_method("on_player_touched") and get_linear_velocity().y > 0:
 		body.on_player_touched()
+	$Fall.play("Stay")
 	if body.is_in_group('Paddles') and get_linear_velocity().y > 0:
 		set_linear_velocity(Vector2(0,-jump_speed))
+		
 
 
 func exit_screen():
-	if position.x > camera.position.x and get_linear_velocity().x > 0:
-		set_position(Vector2(-width/2-10,position.y))
-	if position.x < camera.position.x and get_linear_velocity().x < 0:
-		set_position(Vector2(width/2-10,position.y))
-	if position.y >= camera.position.y+(width/2+20):
+	if position.x > camera.position.x:
+		if position.x > camera.position.x-(width/2-10):
+			set_position(Vector2(-width/2-10,position.y))
+	else:
+		if position.x < camera.position.x+(width/2-10):
+			set_position(Vector2(width/2-10,position.y))
+	if position.y >= camera.position.y+(height/2):
 		get_tree().change_scene(("res://Scenes/GameOver.tscn"))
 
 	pass 
