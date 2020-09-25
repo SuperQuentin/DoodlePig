@@ -1,8 +1,26 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Scripts/GameOver.gd" type="Script" id=1]
-[ext_resource path="res://Sprites/MenuGameOver.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/Animation/GameOver/001.png" type="Texture" id=2]
 [ext_resource path="res://Sprites/buttonPlayAgain.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/Animation/GameOver/000.png" type="Texture" id=4]
+
+[sub_resource type="Animation" id=1]
+resource_name = "GameOver"
+length = 0.6
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Background:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ ExtResource( 4 ), ExtResource( 2 ) ]
+}
 
 [node name="Node2D" type="Node2D"]
 position = Vector2( 311.479, 377.55 )
@@ -21,7 +39,10 @@ __meta__ = {
 [node name="Background" type="TextureRect" parent="MarginContainer"]
 margin_right = 660.0
 margin_bottom = 898.0
-texture = ExtResource( 2 )
+texture = ExtResource( 4 )
+
+[node name="StayGameOver" type="AnimationPlayer" parent="MarginContainer"]
+anims/GameOver = SubResource( 1 )
 
 [node name="Button" type="Button" parent="."]
 margin_left = -61.5043

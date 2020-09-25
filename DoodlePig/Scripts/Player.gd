@@ -23,6 +23,8 @@ func _physics_process(delta):
 	var left_key = Input.is_action_pressed("ui_left")
 	var right_key = Input.is_action_pressed("ui_right")
 	
+	if get_linear_velocity().y > 0:
+		$Fall.play("PlayFall")
 	if left_key:
 		set_linear_velocity(Vector2(-speed, get_linear_velocity().y))
 		sprite.set_flip_h(false)
@@ -33,8 +35,10 @@ func _physics_process(delta):
 		set_linear_velocity(Vector2(0,get_linear_velocity().y))
 
 func collision(body):
+	$Fall.play("Stay")
 	if body.is_in_group('Paddles') and get_linear_velocity().y > 0:
 		set_linear_velocity(Vector2(0,-jump_speed))
+		
 
 
 func exit_screen():
