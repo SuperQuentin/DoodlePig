@@ -1,13 +1,13 @@
 extends Camera2D
 
-signal move
+signal on_move(number)
 
 export(NodePath) var player_path
 
 var player
 
 var histo_camera_Y
-var generate_step = -100
+var generate_step_y 
 
 
 func _ready():
@@ -22,7 +22,11 @@ func _process(delta):
 		set_position(Vector2(0,player_y))
 		var cam_y = get_camera_position().y
 		
-		if cam_y <= histo_camera_Y + generate_step:
-			histo_camera_Y = cam_y
-			emit_signal("move",histo_camera_Y + generate_step)
+		if cam_y <= (generate_step_y+800):
+			emit_signal("on_move", generate_step_y + 150)
+			print("cloud as been generate at %f" % generate_step_y )
 	pass
+	
+	
+func set_gen_step(y):
+	generate_step_y = y

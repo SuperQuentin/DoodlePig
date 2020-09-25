@@ -122,11 +122,13 @@ shape = SubResource( 1 )
 
 [node name="SpriteLeft" type="Sprite" parent="."]
 position = Vector2( -13.2214, -0.24467 )
+rotation = 0.0634312
 scale = Vector2( 0.182249, 0.182249 )
 texture = ExtResource( 2 )
 
 [node name="SpriteRight" type="Sprite" parent="."]
 position = Vector2( 15.2258, 0.768594 )
+rotation = 0.0568919
 scale = Vector2( 0.182249, 0.182249 )
 texture = ExtResource( 1 )
 

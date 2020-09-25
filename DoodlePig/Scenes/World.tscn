@@ -43,3 +43,5 @@ position = Vector2( 0.943878, 47.1937 )
 [node name="MovingCloudPlatform2" parent="." instance=ExtResource( 6 )]
 visible = false
 position = Vector2( 132.149, 58.733 )
+[connection signal="last_cloud_y" from="." to="Camera2D" method="set_gen_step"]
+[connection signal="on_move" from="Camera2D" to="." method="generateCloud"]
